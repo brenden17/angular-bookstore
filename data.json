@@ -1,0 +1,81 @@
+{
+  "nodes": [
+    {
+      "id": "writer",
+      "label": "Henry Lawson",
+      "x": 2,
+      "y": 2,
+      "size": 5,
+      "color": "#95b957"
+    },
+    {
+      "id": "birth",
+      "label": "Australian",
+      "x": 2,
+      "y": 1.5,
+      "size": 5,
+      "color": "#d39600"
+    },
+    {
+      "id": "writer_another_name",
+      "label": "Joe Swallow",
+      "x": 2.3,
+      "y": 2.3,
+      "size": 5,
+      "color": "#d39600"
+    },
+    {
+      "id": "sex",
+      "label": "Male",
+      "x": 1.7,
+      "y": 2.3,
+      "size": 5,
+      "color": "#d39600"
+    },
+    {
+      "id": "location",
+      "label": "New South Wales",
+      "x": 1.7,
+      "y": 1.7,
+      "size": 5,
+      "color": "#d39600"
+    },
+    {
+      "id": "born",
+      "label": "17 Jun 1867",
+      "x": 2.3,
+      "y": 1.7,
+      "size": 5,
+      "color": "#d39600"
+    }
+    
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "source": "writer",
+      "target": "birth"
+    },
+    {
+      "id": "e1",
+      "source": "writer_another_name",
+      "target": "writer"
+    },
+    {
+      "id": "e2",
+      "source": "sex",
+      "target": "writer"
+    },
+    {
+      "id": "e3",
+      "source": "location",
+      "target": "writer"
+    },
+    {
+      "id": "e4",
+      "source": "born",
+      "target": "writer"
+    }
+
+  ]
+}

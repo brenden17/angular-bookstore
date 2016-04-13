@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- http://www.austlit.edu.au/austlit/page/A12465?mainTabTemplate=agentWorksBy&restrictToAgent=A12465&from=0&count=10000 -->
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Henry Lawson::Austlit</title>
+  <link rel="stylesheet" href="../../bower_components/bootstrap-css/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="http://dimplejs.org/dist/dimple.v2.1.6.min.js"></script> 
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script src="../../bower_components/sigma.min.js"></script>
+  <script src="../../bower_components/sigma.parsers.json.min.js"></script>
+  <script src="../../bower_components/angular/angular.min.js"></script>
+  <script src="./app.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+  <style>
+  #map-canvas {
+    width: 170px;
+    height: 180px;
+    /*float: left;*/
+  }
+  #graph-container {
+    max-width: 400px;
+    height: 400px;
+    margin: auto;
+  }
+  </style>
+</head>
+<body ng-controller="openUrlCtrl">
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage"><b>AUST</b>LIT</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#myPage">SEARCH</a></li>
+        <li><a href="#band">READING</a></li>
+        <li><a href="#tour">TEACHING</a></li>
+        <li><a href="#contact">RESEARCH</a></li>
+        <li><a href="#contact">EXPLORE</a></li>
+      </ul>
+    </div>
+  </div>
+  </nav>
+  <br>
+  <br>
+  <br>
+
+  <div class="container bg-1">
+    <div class="row">
+      <div class="col-xs-4">
+        IMAGE
+      </div>
+      <div class="col-xs-8">
+        <h3>Henry Lawson <small>(1431 works by)</small></h3>
+        <p>Birth name: Henry (Lawson) Larsen) (a.k.a. H. L.; Harry Lawson)</p>
+        <p>Also writes as: Joe Swallow ; An Australian Exile ; see more Born: 17 Jun 1867 Grenfell, New South Wales ; Died: 2 Sep 1922 Abbotsford, New South </p>
+        <p>Wales Gender: Male</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-1">
+    </div>
+    <div class="col-xs-2">
+      <ul class="list-group">
+        <li class="list-group-item">AUTHOR</li>
+        <li class="list-group-item">WORKS BY (1431)</li>
+        <li class="list-group-item">Works About Author(1081)</li>
+        <li class="list-group-item">Works About Their Works(456)</li>
+        <li class="list-group-item">Works Taught(9)</li>
+        <li class="list-group-item">This Author in Trove</li>
+      </ul>
+    </div>
+    <div class="col-xs-6">
+      <h4>Works By<small class="pull-right" data-toggle="modal" data-target="#myModal">library</small></h4>
+      <hr>
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>Racconti</strong> Henry Lawson , Franca Cavagnoli (editor), Rome : Idragomanni , 2014 selected work short story <small ng-if="nq"><a href="#">{{}}</a></small></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>Henry Lawson I Sol Og Regn På Slitne Bein : Utvalgte Dikt Og Noveller.</strong> Henry Lawson In the Sun and Rain on Tired Legs, Selected Poems and Short Stories Henry Lawson , Håvard Rem (translator), Åsmund Forfang (translator), Norway : Bokbyen , 2014 selected work poetry short story</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>Poems</strong> Henry Lawson , Sydney South : HarperCollins , 2014 selected work poetry </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>Henry Lawson : A Selection</strong> Henry Lawson , Drew Forsythe , Wyn Roberts , Don Barker , Roger Cardwell , Ultimo : ABC Books , 2013 selected work short story </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>Great Aussie Jokes, Blokes and Quotes</strong> Paul Taylor , 'Steele Rudd' , Edward Dyson , Henry Lawson , Scoresby : Five Mile Press , 2013 selected work short story </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>A Letter to the Bulletin</strong> Henry Lawson , 2013 prose — Appears in: The Best Australian Yarns : And Other True Stories 2013; (p. 149) </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>While the Billy Boils</strong> : The Original Newspaper Versions Henry Lawson , Paul Eggert (editor), Sydney : Sydney University Press , 2013 selected work short stor</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>The Campfire Yarns of Henry Lawson</strong> Henry Lawson , Jack Thompson , Coogee : FinePoets , 2009 selected work short story </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>The Loaded Dog and More Classic Favourites from Henry</strong> Lawson and Banjo Paterson Henry Lawson , A. B. Paterson , Colin Friels , Ultimo : ABC Audio , 2005 selected work poetry </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>Lawson</strong> Henry Lawson , John Schumann (composer), Australia : Bombora Music , 2005 selected work poetry</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>Racconti</strong> Henry Lawson , Franca Cavagnoli (editor), Rome : Idragomanni , 2014 selected work short story</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>Henry Lawson I Sol Og Regn På Slitne Bein : Utvalgte Dikt Og Noveller.</strong> Henry Lawson In the Sun and Rain on Tired Legs, Selected Poems and Short Stories Henry Lawson , Håvard Rem (translator), Åsmund Forfang (translator), Norway : Bokbyen , 2014 selected work poetry short story</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>Poems</strong> Henry Lawson , Sydney South : HarperCollins , 2014 selected work poetry </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>Henry Lawson : A Selection</strong> Henry Lawson , Drew Forsythe , Wyn Roberts , Don Barker , Roger Cardwell , Ultimo : ABC Books , 2013 selected work short story </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>Great Aussie Jokes, Blokes and Quotes</strong> Paul Taylor , 'Steele Rudd' , Edward Dyson , Henry Lawson , Scoresby : Five Mile Press , 2013 selected work short story </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>A Letter to the Bulletin</strong> Henry Lawson , 2013 prose — Appears in: The Best Australian Yarns : And Other True Stories 2013; (p. 149) </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>While the Billy Boils</strong> : The Original Newspaper Versions Henry Lawson , Paul Eggert (editor), Sydney : Sydney University Press , 2013 selected work short stor</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>The Campfire Yarns of Henry Lawson</strong> Henry Lawson , Jack Thompson , Coogee : FinePoets , 2009 selected work short story </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>The Loaded Dog and More Classic Favourites from Henry</strong> Lawson and Banjo Paterson Henry Lawson , A. B. Paterson , Colin Friels , Ultimo : ABC Audio , 2005 selected work poetry </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox"></td>
+            <td><strong>Lawson</strong> Henry Lawson , John Schumann (composer), Australia : Bombora Music , 2005 selected work poetry</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-xs-2">
+      <ul class="list-group">
+        <li class="list-group-item"> 
+          SORT
+          <ul>
+            <li>Title (A-Z)</li>
+            <li>Title (Z-A)</li>
+            <li>Date (Earliest)</li>
+            <li>Date (Latest)</li>
+            <li>Importance</li>
+          </ul>
+        </li>
+        <li class="list-group-item">
+          <div id="chartContainer-PIE">
+            <script type="text/javascript">
+            var svg = dimple.newSvg("#chartContainer-PIE", 190, 170);
+
+            var data = [{"date":"2016-03-11", "item":"Drama", "count":"1"},{"date":"2016-03-10", "item":"Drama", "count":"1"},{"date":"2016-03-09", "item":"Drama", "count":"1"},{"date":"2016-03-08", "item":"Drama", "count":"1"},{"date":"2016-03-07", "item":"Drama", "count":"1"},{"date":"2016-03-11", "item":"Drama", "count":"1"},{"date":"2016-03-11", "item":"Drama", "count":"1"},{"date":"2016-03-11", "item":"Prose", "count":"1"},{"date":"2016-03-10", "item":"Prose", "count":"1"},{"date":"2016-03-09", "item":"Prose", "count":"1"},{"date":"2016-03-08", "item":"Prose", "count":"1"},{"date":"2016-03-07", "item":"Prose", "count":"1"},{"date":"2016-03-11", "item":"Prose", "count":"1"},{"date":"2016-03-11", "item":"Prose", "count":"1"},{"date":"2016-03-11", "item":"Criticism", "count":"1"},{"date":"2016-03-10", "item":"Criticism", "count":"1"},{"date":"2016-03-09", "item":"Film/Tv", "count":"1"},{"date":"2016-03-08", "item":"Film/Tv", "count":"1"},{"date":"2016-03-07", "item":"Film/Tv", "count":"1"},{"date":"2016-03-11", "item":"Film/Tv", "count":"1"},{"date":"2016-03-11", "item":"Film/Tv", "count":"1"},{"date":"2016-03-11", "item":"Film/Tv", "count":"1"},{"date":"2016-03-11", "item":"Film/Tv", "count":"2"},{"date":"2016-03-11", "item":"Film/Tv", "count":"1"},{"date":"2016-03-11", "item":"Film/Tv", "count":"1"},{"date":"2016-03-11", "item":"Film/Tv", "count":"1"},{"date":"2016-03-11", "item":"Criticism", "count":"1"},{"date":"2016-03-11", "item":"Criticism", "count":"2"},{"date":"2016-03-11", "item":"Criticism", "count":"3"},{"date":"2016-03-11", "item":"Criticism", "count":"3"},{"date":"2016-03-11", "item":"Criticism", "count":"1"},{"date":"2016-03-11", "item":"Criticism", "count":"2"},{"date":"2016-03-11", "item":"Criticism", "count":"2"}];
+              
+            var chart = new dimple.chart(svg, data);
+            chart.setBounds(10, 40, 130, 130)
+            // var x = chart.addCategoryAxis("x", "date");
+            // x.addOrderRule("item");
+            // chart.addMeasureAxis("y", "count");
+            chart.addMeasureAxis("p", "count");
+            var pies = chart.addSeries("item", dimple.plot.pie);
+            pies.innerRadius = "20%";
+            chart.addLegend(10, 10, 30, 70, "left");
+            chart.draw();
+            </script>
+          </div>
+        </li>
+        <li class="list-group-item">
+          <div id="chartContainer-LINE">
+            <script type="text/javascript">
+            var svg = dimple.newSvg("#chartContainer-LINE", 170, 180);
+
+            var data = [{"date":"2001", "item":"Drama", "count":"5"},{"date":"2002", "item":"Drama", "count":"6"},{"date":"2003", "item":"Drama", "count":"6"},{"date":"2004", "item":"Drama", "count":"5"},{"date":"2005", "item":"Drama", "count":"8"},{"date":"2006", "item":"Drama", "count":"5"},{"date":"2007", "item":"Drama", "count":"6"},{"date":"2008", "item":"Prose", "count":"5"},{"date":"2009", "item":"Prose", "count":"7"},{"date":"2010", "item":"Prose", "count":"6"},{"date":"2011", "item":"Prose", "count":"6"},{"date":"2012", "item":"Prose", "count":"4"}];
+              
+            var chart = new dimple.chart(svg, data);
+            chart.setBounds(15, 10, 140, 130)
+            var x = chart.addCategoryAxis("x", "date");
+            x.addOrderRule("Date");
+            chart.addMeasureAxis("y", "count");
+            var s = chart.addSeries(null, dimple.plot.bar);
+            chart.draw();
+            </script>
+          </div>
+        </li>
+        <li class="list-group-item">
+        <div id="map-canvas"></div>  
+          <script type="text/javascript">
+              // function initialize() {
+                var latLng = new google.maps.LatLng(-27.471, 153.0234);
+                var map = new google.maps.Map(document.getElementById('map-canvas'), {
+                  zoom: 12,
+                  center: latLng,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
+
+                var marker = new google.maps.Marker({
+                  position: latLng,
+                  title: 'Henry Lawson',
+                  map: map,
+                  draggable: false
+                });
+              // }
+          </script>
+        </li>
+        <li class="list-group-item">
+        <div id="graph-container"></div>  
+        <script>
+          sigma.parsers.json('./data.json', {
+            container: 'graph-container',
+            settings: {
+              defaultNodeColor: '#ec5148'
+            }
+          });
+        </script>
+        </li>
+      </ul>
+    </div>
+    <div class="col-xs-1">
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Select Library</h4>
+        </div>
+        <div class="modal-body">
+           <div class="checkbox">
+            <label><input type="checkbox" ng-model="uq">University Qeensland Library</label>
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox" ng-model="ug">University Griffith Library</label>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <!-- end of Modal -->
+</body>
+</html>

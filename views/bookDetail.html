@@ -1,0 +1,23 @@
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">{{ vm.data.book.title }}</div>
+  <div class="panel-body">
+    <p><img src="img/{{ vm.data.book.image }}" alt=""></p>
+    
+    <button class="btn" role="button" ng-click="vm.contentShowHide()">Content</button>
+    <p ng-hide="vm.data.showContent">
+      {{ vm.data.book.description }}
+    </p>
+  </div>
+
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item">Price : {{ vm.data.book.price|currency }}</li>
+    <li class="list-group-item">Category : {{ vm.data.book.category }}</li>
+    <li class="list-group-item">
+      <button class="btn btn-primary" role="button" ng-click="vm.addBookToCart()">Buy</button>
+      <button class="btn btn-primary" role="button" ng-click="vm.goCheckout()">Buy and Checkout</button>
+      </li>
+  </ul>
+</div>
